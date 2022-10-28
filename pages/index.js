@@ -122,6 +122,7 @@ const getEstimatedAmount = async () => {
   } 
   
   catch (err) {
+    setAmountOut("Pool doesn't Exist");
     console.error(err);
   }
 };
@@ -185,7 +186,6 @@ const getEstimatedAmount = async () => {
     </div>
     <br/><br/><br/>
   
-
         {/* type is button here(important) since not submitting the inputs */}
     <button type="button" className="btn btn-primary mb-2" onClick={getEstimatedAmount}>Estimated Amount Out</button>
   </div>
@@ -194,7 +194,7 @@ const getEstimatedAmount = async () => {
 ) : 
 (<button type="button" className="btn btn-primary mb-2" onClick={connectWallet}> Connect your wallet </button>)}
 </main> 
-{walletConnected && (<h1>{amountOut}</h1>)}
+{walletConnected && (<h1 style={{color: " #3333ff"}}>{amountOut}</h1>)}
 </div>
 
   )
