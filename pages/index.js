@@ -25,11 +25,11 @@ const getProviderOrSigner = async (needSigner = false) => {
   const provider = await web3ModalRef.current.connect();
   const web3Provider = new providers.Web3Provider(provider);
 
-  // If user is not connected to the Goerli network, let them know and throw an error
+  // If user is not connected to the POLYGON MUMBAI network, let them know and throw an error
   const { chainId } = await web3Provider.getNetwork();
-  if (chainId !== 5) {
-    window.alert("Change the network to goerli-testnet");
-    throw new Error("Change network to goerli-testnet");
+  if (chainId !== 80001) {
+    window.alert("Change the network to POLYGON MUMBAI-testnet");
+    throw new Error("Change network to POLYGON MUMBAI-testnet");
   }
 
   if (needSigner) {
